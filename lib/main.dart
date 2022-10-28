@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/home_page.dart';
 import 'package:flutter_app/pages/login_page.dart';
+import 'package:flutter_app/pages/utils/Routes.dart';
 
 
 void main() {
@@ -20,10 +21,12 @@ class MyApp extends StatelessWidget {
         darkTheme: ThemeData(primarySwatch: Colors.green),
       
        // initialRoute: "/home",--->>open the page of first create
+       debugShowCheckedModeBanner: false,
+       initialRoute: MyRoutes.homeRoute,
         routes: {
           "/": (context) => LoginPage(),
-          "/home": (context) => HomePage(), // jab hum object ko define karte hai to usko aage new lagate hai
-          "/login": (context) => LoginPage(),
+          MyRoutes.homeRoute: (context) => HomePage(), // jab hum object ko define karte hai to usko aage new lagate hai
+          MyRoutes.loginRoute: (context) => LoginPage(),
         });
   }
 }
