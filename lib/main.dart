@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/home_page.dart';
 import 'package:flutter_app/pages/login_page.dart';
 import 'package:flutter_app/pages/utils/Routes.dart';
+import 'package:flutter_app/pages/widget/themes.dart';
 
 
 void main() {
@@ -14,11 +15,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        themeMode: ThemeMode.dark,
-        theme: ThemeData(primarySwatch: Colors.grey,
-     //   fontFamily: GoogleFonts.lato().fontFamily,---->>>not un
-        ),
-        darkTheme: ThemeData(primarySwatch: Colors.green),
+        themeMode: ThemeMode.light,
+        theme:MyTheme.LightTheme(context),
+        darkTheme: MyTheme.darkTheme(context),
       
        // initialRoute: "/home",--->>open the page of first create
        debugShowCheckedModeBanner: false,
